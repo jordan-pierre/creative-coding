@@ -43,4 +43,6 @@ const sketch = () => {
   };
 };
 
+// TODO: change background color & line color
+// TODO: See what else is available with the package: https://github.com/mattdesl/canvas-sketch
 canvasSketch(sketch, settings);
