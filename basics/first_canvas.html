@@ -1,0 +1,57 @@
+<html>
+
+<body>
+    <canvas width="600" height="600"></canvas>
+
+    <script>
+        let canvas = document.querySelector('canvas');
+        let context = canvas.getContext('2d');
+
+        // // create a blue rectangle
+        // context.fillStyle = 'blue' // property, not function
+        // // provide top left point and top right point by pixels from top left origin
+        // context.fillRect(100, 100, 400, 400); // pos: right, down, right, down
+        // // fill rect creates a new shape, draw rectangle, and fills it with color
+
+        // // Draw rectangle
+        // context.lineWidth = 4; // makes outlines thicker
+        // context.beginPath();
+        // context.rect(100, 100, 400, 400);
+        // context.stroke(); // only outline
+
+        // // Draw circle
+        // context.beginPath();
+        // context.arc(300, 300, 100, 0, Math.PI * 2);
+        // context.stroke();
+
+        // good reference for these canvas functions are w3schools
+
+
+        // Make a grid of rectangles with some outlined
+        const width = 60;
+        const height = 60;
+        const gap = 20;
+        let x, y;
+        let grid = 5;
+
+        for (let i = 0; i < grid; i++) {
+            for (let j = 0; j < grid; j++) {
+                x = 100 + (width + gap) * i;
+                y = 100 + (height + gap) * j;
+
+                context.beginPath();
+                context.rect(x, y, width, height);
+                context.stroke();
+
+                if (Math.random() < 0.5) {
+                    context.beginPath();
+                    context.rect(x + 8, y + 8, width - 16, height - 16);
+                    context.stroke();
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

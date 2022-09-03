@@ -1,0 +1,65 @@
+<html>
+
+<body>
+    <canvas width="600" height="600"></canvas>
+    <script>
+        // variables
+        let year = 2041;
+        let nextYear = year + 1;
+
+        let dinner = 'pasta';
+        let sentence = 'Tonight, dinner will be ' + dinner;
+
+        // functions
+        function saySomething(param) {
+            console.log(param)
+
+        }
+
+        saySomething(sentence)
+
+        function add(a, b) {
+            return a + b;
+        }
+
+        let result = add(5, 7)
+        console.log(result)
+
+        let multiply = (a, b) => {
+            return a * b
+        }
+
+        console.log(multiply(5, 7))
+
+        // arrays
+        let years = []
+        let menu = ['starter', 'main', 'dessert', 'drinks']
+
+        // loops
+        // for loop
+        for (let i = 0; i < menu.length; i++) {
+            console.log(menu[i]);
+        }
+
+        for (let i = 0; i < 10; i++) {
+            years.push(2040 + i)
+        }
+        console.log(years)
+
+        // for-each loop
+        menu.forEach(item => {
+            console.log(item)
+        });
+
+        // conditions
+        if (Math.random() < 0.5) {
+            console.log('Random number was less than 0.5!')
+        } else {
+            console.log('Random number was greater than 0.5!')
+        }
+
+        // 
+    </script>
+</body>
+
+</html>
