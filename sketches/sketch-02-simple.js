@@ -22,7 +22,7 @@ const sketch = () => {
     const h = height * 0.1;
     let x, y;
 
-    const num = 40;
+    const num = 12;
     const radius = width * 0.3;
 
     for (let i = 0; i < num; i++) {
@@ -32,32 +32,17 @@ const sketch = () => {
       x = cx + radius * Math.sin(angle);
       y = cy + radius * Math.cos(angle);
 
-      // Draw "clock ticks"
-      context.save();
+      context.save()
       context.translate(x, y);
       context.rotate(-angle);
-      context.scale(random.range(1, 3), 1);
+      context.scale(random.range(1, 3), 1)
 
       context.beginPath();
-      context.rect(-w * random.range(0.1, 0.5), -h * random.range(0.01, 0.10), w * random.range(0.5, 1), h * random.range(0.5, 2));
+      context.rect(-w * 0.5, -h * 0.5, w, h);
       context.fill();
-      context.restore();
-
-      // Draw circle
-      context.save();
-      context.translate(cx, cy);
-      context.rotate(-angle);
-
-      context.lineWidth = random.range(5, 20);
-
-      context.beginPath();
-      context.arc(0, 0, radius * random.range(0.7, 1.4), slice * random.range(1, -8), slice * random.range(1, 4));
-      context.stroke();
-
-      context.restore();
+      context.restore()
     }
   };
 };
 
-// TODO: Make a sunset, add colors
 canvasSketch(sketch, settings);
