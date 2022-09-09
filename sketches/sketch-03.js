@@ -1,6 +1,11 @@
+// Run with streaming with `canvas-sketch sketch-03.js --output=output/03 --stream`
+// ctrl+S to start ... ctrl+shift+S to save mp4
+
 const canvasSketch = require('canvas-sketch');
 const random = require('canvas-sketch-util/random')
 const math = require('canvas-sketch-util/math')
+
+const MAX_LINE_DISTANCE = 200;
 
 const settings = {
   dimensions: [1080, 1080],
@@ -30,9 +35,9 @@ const sketch = ({ context, width, height }) => {
 
         const dist = agent.pos.getDistance(other.pos);
 
-        if (dist > 200) continue;
+        if (dist > MAX_LINE_DISTANCE) continue;
 
-        context.lineWidth = math.mapRange(dist, 0, 200, 12, 1)
+        context.lineWidth = math.mapRange(dist, 0, MAX_LINE_DISTANCE, 12, 1)
 
         context.beginPath();
         context.moveTo(agent.pos.x, agent.pos.y);
